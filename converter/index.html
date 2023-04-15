@@ -322,155 +322,177 @@
             </script>
         </div>
         <script>
-            function convertArea3() {
-                var mjinputArea = parseFloat(document.getElementById("mjinput-area").value);
-                var mjinputUnit = document.getElementById("mjinput-unit").value;
-                var mjoutputUnit = document.getElementById("mjoutput-unit").value;
-                var mjresultArea;
+    function convertArea3() {
+        var mjinputArea = parseFloat(document.getElementById("mjinput-area").value);
+        var mjinputUnit = document.getElementById("mjinput-unit").value;
+        var mjoutputUnit = document.getElementById("mjoutput-unit").value;
+        var mjresultArea;
 
-                if (mjinputUnit === mjoutputUnit) {
-                    mjresultArea = mjinputArea;
-                } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-cm") {
-                    mjresultArea = mjinputArea * 10000;
-                } else if (mjinputUnit === "sq-cm" && mjoutputUnit === "sq-m") {
-                    mjresultArea = mjinputArea / 10000;
-                } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-ft") {
-                    mjresultArea = mjinputArea * 10.764;
-                } else if (mjinputUnit === "sq-ft" && mjoutputUnit === "sq-m") {
-                    mjresultArea = mjinputArea / 10.764;
-                } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-dm") {
-                    mjresultArea = mjinputArea * 100;
-                } else if (mjinputUnit === "sq-dm" && mjoutputUnit === "sq-m") {
-                    mjresultArea = mjinputArea / 100;
-                } else if (mjinputUnit === "sq-m" && mjoutputUnit === "mu") {
-                    mjresultArea = mjinputArea / 666.67;
-                } else if (mjinputUnit === "mu" && mjoutputUnit === "sq-m") {
-                    mjresultArea = mjinputArea * 666.67;
-                } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-km") {
-                    mjresultArea = mjinputArea / 1000000;
-                } else if (mjinputUnit === "sq-km" && mjoutputUnit === "sq-m") {
-                    mjresultArea = mjinputArea * 1000000;
-                } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-mm") {
-                    mjresultArea = mjinputArea * 1000000;
-                } else if (mjinputUnit === "sq-mm" && mjoutputUnit === "sq-m") {
-                    mjresultArea = mjinputArea / 1000000;
-                }
+        if (mjinputUnit === mjoutputUnit) {
+            mjresultArea = mjinputArea;
+        } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-cm") {
+            mjresultArea = mjinputArea * 10000;
+        } else if (mjinputUnit === "sq-cm" && mjoutputUnit === "sq-m") {
+            mjresultArea = mjinputArea / 10000;
+        } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-ft") {
+            mjresultArea = mjinputArea * 10.764;
+        } else if (mjinputUnit === "sq-ft" && mjoutputUnit === "sq-m") {
+            mjresultArea = mjinputArea / 10.764;
+        } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-dm") {
+            mjresultArea = mjinputArea * 100;
+        } else if (mjinputUnit === "sq-dm" && mjoutputUnit === "sq-m") {
+            mjresultArea = mjinputArea / 100;
+        } else if (mjinputUnit === "sq-m" && mjoutputUnit === "mu") {
+            mjresultArea = mjinputArea / 666.67;
+        } else if (mjinputUnit === "mu" && mjoutputUnit === "sq-m") {
+            mjresultArea = mjinputArea * 666.67;
+        } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-km") {
+            mjresultArea = mjinputArea / 1000000;
+        } else if (mjinputUnit === "sq-km" && mjoutputUnit === "sq-m") {
+            mjresultArea = mjinputArea * 1000000;
+        } else if (mjinputUnit === "sq-m" && mjoutputUnit === "sq-mm") {
+            mjresultArea = mjinputArea * 1000000;
+        } else if (mjinputUnit === "sq-mm" && mjoutputUnit === "sq-m") {
+            mjresultArea = mjinputArea / 1000000;
+        } else if (mjinputUnit === "sq-m" && mjoutputUnit === "ha") {
+            mjresultArea = mjinputArea / 10000;
+        } else if (mjinputUnit === "ha" && mjoutputUnit === "sq-m") {
+            mjresultArea = mjinputArea * 10000;
+        } else if (mjinputUnit === "sq-m" && mjoutputUnit === "gm") {
+            mjresultArea = mjinputArea / 1000;
+        } else if (mjinputUnit === "gm" && mjoutputUnit === "sq-m") {
+            mjresultArea = mjinputArea * 1000;
+        }
 
-                document.getElementById("mjresult").innerHTML = "转换结果：" + mjresultArea.toFixed(2);
-                document.getElementById("mjresult").style.display = "block";
-            }
-        </script>
+        document.getElementById("mjresult").innerHTML = "转换结果：" + mjresultArea.toFixed(2);
+        document.getElementById("mjresult").style.display = "block";
+    }
+</script>
         <div>
             <h1 id="cdcalc">长度单位转换</h1>
-            <form>
-                <label>请输入需要转换的长度值：</label>
-                <input type="number" id="cdinputNumber">
-                <label>请选择初始单位：</label>
-                <select id="cdinputUnit">
-                    <option value="micrometer">微米</option>
-                    <option value="millimeter">毫米</option>
-                    <option value="centimeter">厘米</option>
-                    <option value="meter">米</option>
-                    <option value="kilometer">千米</option>
-                    <option value="mil">密尔</option>
-                    <option value="inch">英寸</option>
-                    <option value="foot">英尺</option>
-                    <option value="mile">英里</option>
-                </select>
-                <br><br>
-                <label>请选择目标单位：</label>
-                
-                <select id="cdoutputUnit">
-                    <option value="micrometer">微米</option>
-                    <option value="millimeter">毫米</option>
-                    <option value="centimeter">厘米</option>
-                    <option value="meter">米</option>
-                    <option value="kilometer">千米</option>
-                    <option value="mil">密尔</option>
-                    <option value="inch">英寸</option>
-                    <option value="foot">英尺</option>
-                    <option value="mile">英里</option>
-                </select>
-                <br><br>
-                <button onclick="convert4()">转换</button>
-                <span id="cdoutputNumber"></span>
-            </form>
-            <script>
-                function convert4() {
-                    var cdinputNumber = document.getElementById("cdinputNumber").value;
-                    var cdinputUnit = document.getElementById("cdinputUnit").value;
-                    var cdoutputUnit = document.getElementById("cdoutputUnit").value;
+<form>
+  <label>请输入需要转换的长度值：</label>
+  <input type="number" id="cdinputNumber">
+  <label>请选择初始单位：</label>
+  <select id="cdinputUnit">
+    <option value="micrometer">微米</option>
+    <option value="millimeter">毫米</option>
+    <option value="centimeter">厘米</option>
+    <option value="decimeter">分米</option>
+    <option value="meter">米</option>
+    <option value="kilometer">千米</option>
+    <option value="mil">密尔</option>
+    <option value="inch">英寸</option>
+    <option value="foot">英尺</option>
+    <option value="mile">英里</option>
+  </select>
+  <br><br>
+  <label>请选择目标单位：</label>
 
-                    // 将输入单位转换为米
-                    var cdinputMeter;
-                    switch (cdinputUnit) {
-                        case "micrometer":
-                            cdinputMeter = cdinputNumber / 1000000;
-                            break;
-                        case "millimeter":
-                            cdinputMeter = cdinputNumber / 1000;
-                            break;
-                        case "centimeter":
-                            cdinputMeter = cdinputNumber / 100;
-                            break;
-                        case "meter":
-                            cdinputMeter = cdinputNumber;
-                            break;
-                        case "kilometer":
-                            cdinputMeter = cdinputNumber * 1000;
-                            break;
-                        case "mil":
-                            cdinputMeter = cdinputNumber / 39370.079;
-                            break;
-                        case "inch":
-                            cdinputMeter = cdinputNumber * 0.0254;
-                            break;
-                        case "foot":
-                            cdinputMeter = cdinputNumber * 0.3048;
-                            break;
-                        case "mile":
-                            cdinputMeter = cdinputNumber * 1609.344;
-                            break;
-                    }
+  <select id="cdoutputUnit">
+    <option value="micrometer">微米</option>
+    <option value="millimeter">毫米</option>
+    <option value="centimeter">厘米</option>
+    <option value="decimeter">分米</option>
+    <option value="meter">米</option>
+    <option value="kilometer">千米</option>
+    <option value="mil">密尔</option>
+    <option value="inch">英寸</option>
+    <option value="foot">英尺</option>
+    <option value="mile">英里</option>
+  </select>
+  <br><br>
+  <button type="button" onclick="convert4()">转换</button>
+  <span id="cdoutputNumber"></span>
+</form>
+<script>
+function convert4() {
+  var cdinputNumber = document.getElementById("cdinputNumber").value;
+  var cdinputUnit = document.getElementById("cdinputUnit").value;
+  var cdoutputUnit = document.getElementById("cdoutputUnit").value;
 
-                    // 将米转换为输出单位
-                    var cdoutputNumber;
-                    switch (cdoutputUnit) {
-                        case "micrometer":
-                            cdoutputNumber = cdinputMeter * 1000000;
-                            break;
-                        case "millimeter":
-                            cdoutputNumber = cdinputMeter * 1000;
-                            break;
-                        case "centimeter":
-                            cdoutputNumber = cdinputMeter * 100;
-                            break;
-                        case "meter":
-                            cdoutputNumber = cdinputMeter;
-                            break;
-                        case "kilometer":
-                            cdoutputNumber = cdinputMeter / 1000;
-                            break;
-                        case "mil":
-                            cdoutputNumber = cdinputMeter * 39370.079;
-                            break;
-                        case "inch":
-                            cdoutputNumber = cdinputMeter / 0.0254;
-                            break;
-                        case "foot":
-                            cdoutputNumber = cdinputMeter / 0.3048;
-                            break;
-                        case "mile":
-                            cdoutputNumber = cdinputMeter / 1609.344;
-                            break;
-                    }
+  // 判断用户是否输入数值
+  if (isNaN(cdinputNumber)) {
+    alert("请输入需要转换的长度值！");
+    return false;
+  }
 
-                    document.getElementById("cdoutputNumber").innerHTML = "转换结果：" + cdoutputNumber;
-                }
-            </script>
+  // 将输入单位转换为米
+  var cdinputMeter;
+  switch (cdinputUnit) {
+    case "micrometer":
+      cdinputMeter = cdinputNumber / 1000000;
+      break;
+    case "millimeter":
+      cdinputMeter = cdinputNumber / 1000;
+      break;
+    case "centimeter":
+      cdinputMeter = cdinputNumber / 100;
+      break;
+    case "decimeter":
+      cdinputMeter = cdinputNumber / 10;
+      break;
+    case "meter":
+      cdinputMeter = cdinputNumber;
+      break;
+    case "kilometer":
+      cdinputMeter = cdinputNumber * 1000;
+      break;
+    case "mil":
+      cdinputMeter = cdinputNumber / 39370.079;
+      break;
+    case "inch":
+      cdinputMeter = cdinputNumber * 0.0254;
+      break;
+    case "foot":
+      cdinputMeter = cdinputNumber * 0.3048;
+      break;
+    case "mile":
+      cdinputMeter = cdinputNumber * 1609.344;
+      break;
+  }
+
+  // 将米转换为输出单位
+  var cdoutputNumber;
+  switch (cdoutputUnit) {
+    case "micrometer":
+      cdoutputNumber = cdinputMeter * 1000000;
+      break;
+    case "millimeter":
+      cdoutputNumber = cdinputMeter * 1000;
+      break;
+    case "centimeter":
+      cdoutputNumber = cdinputMeter * 100;
+      break;
+    case "decimeter":
+      cdoutputNumber = cdinputMeter * 10;
+      break;
+    case "meter":
+      cdoutputNumber = cdinputMeter;
+      break;
+    case "kilometer":
+      cdoutputNumber = cdinputMeter / 1000;
+      break;
+    case "mil":
+      cdoutputNumber = cdinputMeter * 39370.079;
+      break;
+    case "inch":
+      cdoutputNumber = cdinputMeter / 0.0254;
+      break;
+    case "foot":
+      cdoutputNumber = cdinputMeter / 0.3048;
+      break;
+    case "mile":
+      cdoutputNumber = cdinputMeter / 1609.344;
+      break;
+  }
+
+  document.getElementById("cdoutputNumber").innerHTML = "转换结果：" + cdoutputNumber;
+}
+</script>
         </div>
+<div>
         <h1 id="mjcalc">面积单位转换</h1>
-        <div>
             <form>
                 <label for="mjinput-area">请输入需要转换的面积值：</label>
                 <input type="number" id="mjinput-area" required>
@@ -483,6 +505,8 @@
                     <option value="mu">亩</option>
                     <option value="sq-km">平方千米</option>
                     <option value="sq-mm">平方毫米</option>
+            <option value="ha">公顷</option>
+            <option value="gm">公亩</option>
                 </select>
 
                 <label for="mjoutput-unit">请选择目标单位：</label>
@@ -493,6 +517,8 @@
                     <option value="mu">亩</option>
                     <option value="sq-km">平方千米</option>
                     <option value="sq-mm">平方毫米</option>
+            <option value="ha">公顷</option>
+            <option value="gm">公亩</option>
                 </select>
 
                 <button type="button" onclick="convertArea3()">转换</button>
