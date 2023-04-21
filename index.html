@@ -11,7 +11,66 @@
     <title>绿色工具站</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+    /* 适配移动端和平板 */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
     
+    .nav {
+        margin-top: 20px;
+    }
+    
+    .nav li {
+        margin-left: 20px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .intro-title {
+        font-size: 28px;
+    }
+    
+    .intro-text {
+        font-size: 16px;
+    }
+    
+    .features {
+        flex-wrap: wrap;
+    }
+    
+    .feature-item {
+        width: calc(50% - 20px);
+        margin-bottom: 40px;
+    }
+}
+
+/* 适配小屏幕 */
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+    
+    .nav li {
+        margin-left: 10px;
+    }
+    
+    .intro-title {
+        font-size: 24px;
+    }
+    
+    .intro-text {
+        font-size: 14px;
+    }
+    
+    .feature-item {
+        width: calc(100% - 20px);
+    }
+}
     /* reset css */
 * {
     margin: 0;
