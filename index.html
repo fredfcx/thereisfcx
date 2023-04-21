@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>绿色工具站</title>
+
+    <style>
+    /* reset css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00b894; /* 绿色 */
+    color: #fff;
+    padding: 20px 50px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav li {
+    margin-left: 40px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* main content styles */
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 50px;
+}
+
+.intro-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.intro-btns {
+    display: flex;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #2ecc71; /* 深绿色 */
+    color: #fff;
+    margin-right: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #27ae60;
+}
+
+.btn-secondary {
+    background-color: #f5f5f5; /* 浅灰色背景 */
+    color: #000;
+}
+
+.btn-secondary:hover {
+    background-color: #e6e6e6;
+}
+
+.features {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.feature-item {
+    width: calc(33.33% - 20px);
+    text-align: center;
+    background-color: #2ecc71; /* 深绿色 */
+    padding: 50px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.feature-item h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.feature-item p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.feature-item a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #fff;
+    color: #2ecc71; /* 深绿色 */
+}
+
+.feature-item a:hover {
+    background-color: #f5f5f5; /* 浅灰色背景 */
+}
+
+/* footer styles */
+.footer {
+    text-align: center;
+    background-color: #f5f5f5; /* 浅灰色背景 */
+    padding: 20px;
+    margin-top: 50px;
+}
+    </style>
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <h1 class="logo">绿色工具站</h1>
+
+        <nav class="nav">
+
+            <ul>
+
+                <li><a href="#">首页</a></li>
+
+                <li><a href="#">工具推荐</a></li>
+
+                <li><a href="#">最新文章</a></li>
+
+                <li><a href="#">关于我们</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+
+            <h2 class="intro-title">欢迎来到绿色工具站</h2>
+
+            <p class="intro-text">本站提供各类实用工具和技巧，帮助您更便捷地完成工作。</p>
+
+            <div class="intro-btns">
+
+                <a href="#" class="btn btn-primary">进入工具推荐</a>
+
+                <a href="#" class="btn btn-secondary">查看最新文章</a>
+
+            </div>
+
+        </section>
+
+        <section class="features">
+
+            <div class="feature-item">
+
+                <img src="images/feature-1.png" alt="工具一">
+
+                <h3>工具一</h3>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget metus sit amet ligula ullamcorper
+
+                    malesuada ac ac tellus.</p>
+
+                <a href="#">查看详情</a>
+
+            </div>
+
+            <div class="feature-item">
+
+                <img src="images/feature-2.png" alt="工具二">
+
+                <h3>工具二</h3>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget metus sit amet ligula ullamcorper
+
+                    malesuada ac ac tellus.</p>
+
+                <a href="#">查看详情</a>
+
+            </div>
+
+            <div class="feature-item">
+
+                <img src="images/feature-3.png" alt="工具三">
+
+                <h3>工具三</h3>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget metus sit amet ligula ullamcorper
+
+                    malesuada ac ac tellus.</p>
+
+                <a href="#">查看详情</a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <p>&copy; 2023 绿色工具站</p>
+
+    </footer>
+
+</body>
+
+</html>
