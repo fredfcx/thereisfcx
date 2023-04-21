@@ -12,65 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     /* 适配移动端和平板 */
-@media screen and (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-    
-    .nav {
-        margin-top: 20px;
-    }
-    
-    .nav li {
-        margin-left: 20px;
-    }
-    
-    .container {
-        padding: 20px;
-    }
-    
-    .intro-title {
-        font-size: 28px;
-    }
-    
-    .intro-text {
-        font-size: 16px;
-    }
-    
-    .features {
-        flex-wrap: wrap;
-    }
-    
-    .feature-item {
-        width: calc(100% - 5px);
-        margin-bottom: 40px;
-    }
-}
+
 
 /* 适配小屏幕 */
-@media screen and (max-width: 480px) {
-    .logo {
-        font-size: 18px;
-    }
-    
-    .nav li {
-        margin-left: 10px;
-    }
-    
-    .intro-title {
-        font-size: 24px;
-    }
-    
-    .intro-text {
-        font-size: 14px;
-    }
-    
-    .feature-item {
-        width: calc(100% - 5px);
-    }
-}
+
     /* reset css */
 * {
     margin: 0;
@@ -116,7 +61,7 @@ body {
 /* main content styles */
 .container {
     margin: 0 auto;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     padding: 50px;
 }
 
@@ -142,13 +87,13 @@ body {
 }
 
 .btn-primary {
-    background-color: #2ecc71; /* 深绿色 */
+    background-color: #2ecc70a4; /* 深绿色 */
     color: #fff;
     margin-right: 20px;
 }
 
 .btn-primary:hover {
-    background-color: #27ae60;
+    background-color: #29af61a4;
 }
 
 .btn-secondary {
@@ -169,14 +114,16 @@ flex-direction: column;
 }
 
 .feature-item {
-    width: calc(100% - 5px);
-    width: 45%;
+    width: 100%;
     text-align: center;
-    background-color: #2ecc71; /* 深绿色 */
+    background-color: #2ecc70a4; 
     padding: 50px 20px;
-    margin: 5%;
+    margin-left: 5px;
+    margin: 5% auto;
+    /* margin: auto; */
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    min-height: 400px;
 }
 
 .feature-item h3 {
@@ -261,15 +208,15 @@ flex-direction: column;
 
             <div class="feature-item">
 
-                <img src="images/feature-1.png" alt="工具一">
+                <img src="assets/icons/unit_calc.png" alt="换算器"style="width:75px; height:75px; filter:invert(1)">
 
-                <h3>工具一</h3>
+                <h3>万能单位换算器</h3>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget metus sit amet ligula ullamcorper
 
                     malesuada ac ac tellus.</p>
 
-                <a href="#">查看详情</a>
+                <a href="./converter/index.html">查看详情</a>
 
             </div>
 
