@@ -9,155 +9,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>绿色工具站</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-    /* 适配移动端和平板 */
+        /* reset css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        /* body styles */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
 
-/* 适配小屏幕 */
+        /* header styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #00b894;
+            /* 绿色 */
+            color: #fff;
+            padding: 20px 50px;
+        }
 
-    /* reset css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        .logo {
+            font-size: 24px;
+        }
 
-/* body styles */
-body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-}
+        .nav ul {
+            list-style: none;
+            display: flex;
+        }
 
-/* header styles */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #00b894; /* 绿色 */
-    color: #fff;
-    padding: 20px 50px;
-}
+        .nav li {
+            margin-left: 40px;
+        }
 
-.logo {
-    font-size: 24px;
-}
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-.nav ul {
-    list-style: none;
-    display: flex;
-}
+        /* main content styles */
+        .container {
+            margin: 0 auto;
+            /* max-width: 1200px; */
+            padding: 50px;
+        }
 
-.nav li {
-    margin-left: 40px;
-}
+        .intro-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
 
-.nav a {
-    color: #fff;
-    text-decoration: none;
-}
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
 
-/* main content styles */
-.container {
-    margin: 0 auto;
-    /* max-width: 1200px; */
-    padding: 50px;
-}
+        .intro-btns {
+            display: flex;
+        }
 
-.intro-title {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
+        .btn {
+            display: inline-block;
+            padding: 12px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
 
-.intro-text {
-    font-size: 18px;
-    margin-bottom: 40px;
-}
+        .btn-primary {
+            background-color: #2ecc70a4;
+            /* 深绿色 */
+            color: #fff;
+            margin-right: 20px;
+        }
 
-.intro-btns {
-    display: flex;
-}
+        .btn-primary:hover {
+            background-color: #29af61a4;
+        }
 
-.btn {
-    display: inline-block;
-    padding: 12px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-}
+        .btn-secondary {
+            background-color: #f5f5f5;
+            /* 浅灰色背景 */
+            color: #000;
+        }
 
-.btn-primary {
-    background-color: #2ecc70a4; /* 深绿色 */
-    color: #fff;
-    margin-right: 20px;
-}
+        .btn-secondary:hover {
+            background-color: #e6e6e6;
+        }
 
-.btn-primary:hover {
-    background-color: #29af61a4;
-}
+        .features {
+            flex-direction: column;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
 
-.btn-secondary {
-    background-color: #f5f5f5; /* 浅灰色背景 */
-    color: #000;
-}
+        .feature-item {
+            width: 100%;
+            text-align: center;
+            background-color: #2ecc70a4;
+            padding: 50px 20px;
+            margin-left: 5px;
+            margin: 5% auto;
+            /* margin: auto; */
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            min-height: 400px;
+        }
 
-.btn-secondary:hover {
-    background-color: #e6e6e6;
-}
+        .feature-item h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
 
-.features {
-flex-direction: column;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+        .feature-item p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #fff;
+        }
 
-.feature-item {
-    width: 100%;
-    text-align: center;
-    background-color: #2ecc70a4; 
-    padding: 50px 20px;
-    margin-left: 5px;
-    margin: 5% auto;
-    /* margin: auto; */
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    min-height: 400px;
-}
+        .feature-item a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            background-color: #fff;
+            color: #2ecc71;
+            /* 深绿色 */
+        }
 
-.feature-item h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #fff;
-}
+        .feature-item a:hover {
+            background-color: #f5f5f5;
+            /* 浅灰色背景 */
+        }
 
-.feature-item p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    color: #fff;
-}
-
-.feature-item a {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    background-color: #fff;
-    color: #2ecc71; /* 深绿色 */
-}
-
-.feature-item a:hover {
-    background-color: #f5f5f5; /* 浅灰色背景 */
-}
-
-/* footer styles */
-.footer {
-    text-align: center;
-    background-color: #f5f5f5; /* 浅灰色背景 */
-    padding: 20px;
-    margin-top: 50px;
-}
+        /* footer styles */
+        .footer {
+            text-align: center;
+            background-color: #f5f5f5;
+            /* 浅灰色背景 */
+            padding: 20px;
+            margin-top: 50px;
+        }
     </style>
 
 </head>
@@ -165,97 +166,50 @@ flex-direction: column;
 <body>
 
     <header class="header">
-
         <h1 class="logo">绿色工具站</h1>
-
         <nav class="nav">
-
             <ul>
-
                 <li><a href="#">首页</a></li>
-
                 <li><a href="#">工具推荐</a></li>
-
                 <li><a href="#">最新文章</a></li>
-
                 <li><a href="#">关于我们</a></li>
-
             </ul>
-
         </nav>
-
     </header>
-
     <main class="container">
-
         <section class="intro">
-
             <h2 class="intro-title">欢迎来到绿色工具站</h2>
-
             <p class="intro-text">本站提供各类实用工具和技巧，帮助您更便捷地完成工作。</p>
-
             <div class="intro-btns">
-
                 <a href="#" class="btn btn-primary">进入工具推荐</a>
-
                 <a href="#" class="btn btn-secondary">查看最新文章</a>
-
             </div>
-
         </section>
-
         <section class="features">
-
             <div class="feature-item">
-
-                <img src="assets/icons/unit_calc.png" alt="换算器"style="width:75px; height:75px; filter:invert(1)">
-
+                <svg t="1682142353378" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11625" width="64" height="64"><path style="fill:white;" d="M923.42 32H100.58A68.58 68.58 0 0 0 32 100.58v822.84A68.58 68.58 0 0 0 100.58 992h822.84A68.58 68.58 0 0 0 992 923.42V100.58A68.58 68.58 0 0 0 923.42 32z m-137.14 754.28h-19.02a136 136 0 0 1-236.24 0H237.72a68.58 68.58 0 1 1 0-137.14h293.3a136 136 0 0 1 236.24 0h19.02a68.58 68.58 0 1 1 0 137.14z m0-411.42H492.98a136 136 0 0 1-236.24 0h-19.02a68.58 68.58 0 1 1 0-137.14h19.02a136 136 0 0 1 236.24 0h293.3a68.58 68.58 0 1 1 0 137.14z" p-id="11626"></path></svg>
                 <h3>万能单位换算器</h3>
-
-                <p>输入数字，选择输入单位，选择输出单位，单击转换！</p>
-
+                <p>输入数字，将在其他输入框内展示换算结果。输入支持复数、浮点数以及科学计数法</p>
                 <a href="./converter/index.html">查看详情</a>
-
             </div>
-
             <div class="feature-item">
-
                 <img src="images/feature-2.png" alt="工具二">
-
                 <h3>工具二</h3>
-
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget metus sit amet ligula ullamcorper
-
                     malesuada ac ac tellus.</p>
-
                 <a href="#">查看详情</a>
-
             </div>
-
             <div class="feature-item">
-
                 <img src="images/feature-3.png" alt="工具三">
-
                 <h3>工具三</h3>
-
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget metus sit amet ligula ullamcorper
-
                     malesuada ac ac tellus.</p>
-
                 <a href="#">查看详情</a>
-
             </div>
-
         </section>
-
     </main>
-
     <footer class="footer">
-
         <p>&copy; 2023 绿色工具站</p>
-
     </footer>
-
 </body>
-
 </html>

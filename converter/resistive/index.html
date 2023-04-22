@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <title>绿色工具站 | 电阻单位换算</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="icon" href="../assets/icons/resistor.svg" sizes="any">
+    <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
+    <link rel="apple-touch-icon" href="../assets/icons/unit_calc.png">
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-earthly.css" type="text/css">
+</head>
+
+<body>
+    <fieldset>
+        <legend>电阻单位换算</legend>
+        <div><input class="input" type="number" id="ohm" aria-labelledby="Ω">欧姆(Ω)</div>
+        <div><input class="input" type="number" id="ko" aria-labelledby="KΩ">千欧姆(KΩ)</div>
+        <div><input class="input" type="number" id="mo" aria-labelledby="MΩ">兆欧姆(MΩ)</div>
+        <div><input class="input" type="number" id="go" aria-labelledby="GΩ">吉欧姆(GΩ)</div>
+        <div><input class="input" type="number" id="to" aria-labelledby="TΩ">太欧姆(TΩ)</div>
+    </fieldset>
+</body>
+<script>
+    var obj = document.querySelectorAll('.input');
+
+    function base(x) {
+        var bs = Math.pow(10, x);
+        return bs
+    }
+
+    function nantest() {
+        var units = [ohm, ko, mo, go, to]
+        for (i in units) {
+            if (!isNaN(parseFloat(this.value)) && isFinite(this.value) && this.value != null) {
+                ko.value = this.value / base(3);
+                mo.value = this.value / base(6);
+                go.value = this.value / base(9);
+                to.value = this.value / base(12);
+            }
+        }
+    }
+    ohm.oninput = function (e) {
+        // var regPos = /{\d,10}/; //判断是否是数字。
+        if (!isNaN(parseFloat(this.value)) && isFinite(this.value)) {
+            ko.value = this.value / base(3);
+            mo.value = this.value / base(6);
+            go.value = this.value / base(9);
+            to.value = this.value / base(12);
+        }
+        nantest()
+    }
+    ko.oninput = function (e) {
+        // var regPos = /{\d,10}/; //判断是否是数字。
+        if (!isNaN(parseFloat(this.value)) && isFinite(this.value) && this.value != null) {
+            ohm.value = this.value * base(3);
+            mo.value = this.value / base(3);
+            go.value = this.value / base(6);
+            to.value = this.value / base(9);
+        }
+    }
+    mo.oninput = function (e) {
+        // var regPos = /{\d,10}/; //判断是否是数字。
+        if (!isNaN(parseFloat(this.value)) && isFinite(this.value) && this.value != null) {
+            ohm.value = this.value * base(6);
+            ko.value = this.value * base(3);
+            go.value = this.value / base(3);
+            to.value = this.value / base(6);
+        }
+    }
+    go.oninput = function (e) {
+        // var regPos = /{\d,10}/; //判断是否是数字。
+        if (!isNaN(parseFloat(this.value)) && isFinite(this.value) && this.value != null) {
+            ohm.value = this.value * base(9);
+            ko.value = this.value * base(6);
+            mo.value = this.value * base(3);
+            to.value = this.value / base(3);
+        }
+    }
+    to.oninput = function (e) {
+        // var regPos = /{\d,10}/; //判断是否是数字。
+        if (!isNaN(parseFloat(this.value)) && isFinite(this.value) && this.value != null) {
+            ohm.value = this.value * base(12);
+            ko.value = this.value * base(9);
+            mo.value = this.value * base(6);
+            go.value = this.value * base(3);
+
+        }
+    }
+
+
+
+</script>
+<footer>
+    <p>&copy;2023 <a href="../../index.html">绿色工具站</a></p>
+</footer>
+</html>
