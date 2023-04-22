@@ -10,20 +10,37 @@
     <meta property="og:type" content="">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
-    <link rel="icon" href="../assets/icons/resistor.svg" sizes="any">
+    <link rel="icon" href="../../assets/icons/resistor.svg" sizes="any">
     <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
-    <link rel="apple-touch-icon" href="../assets/icons/unit_calc.png">
-    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-earthly.css" type="text/css">
-</head>
+    <link rel="apple-touch-icon" href="../../assets/icons/resistor.svg">
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    <style>
+        input {
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: hwb(96 53% 31% / 0.219);
+            /* 浅灰色背景 */
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+    </head>
 
 <body>
+
+<p>
+    <a class="button outline" href="../index.html">&lt;&nbsp;返回</a>
+</p>
     <fieldset>
         <legend>电阻单位换算</legend>
-        <div><input class="input" type="number" id="ohm" aria-labelledby="Ω">欧姆(Ω)</div>
-        <div><input class="input" type="number" id="ko" aria-labelledby="KΩ">千欧姆(KΩ)</div>
-        <div><input class="input" type="number" id="mo" aria-labelledby="MΩ">兆欧姆(MΩ)</div>
-        <div><input class="input" type="number" id="go" aria-labelledby="GΩ">吉欧姆(GΩ)</div>
-        <div><input class="input" type="number" id="to" aria-labelledby="TΩ">太欧姆(TΩ)</div>
+        <div class="card"><input class="input" type="number" id="ohm" aria-labelledby="Ω">欧姆(Ω)</div>
+        <div class="card"><input class="input" type="number" id="ko" aria-labelledby="KΩ">千欧姆(KΩ)</div>
+        <div class="card"><input class="input" type="number" id="mo" aria-labelledby="MΩ">兆欧姆(MΩ)</div>
+        <div class="card"><input class="input" type="number" id="go" aria-labelledby="GΩ">吉欧姆(GΩ)</div>
+        <div class="card"><input class="input" type="number" id="to" aria-labelledby="TΩ">太欧姆(TΩ)</div>
     </fieldset>
 </body>
 <script>
