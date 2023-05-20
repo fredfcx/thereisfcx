@@ -15,6 +15,20 @@
     <link rel="apple-touch-icon" href="../assets/icons/area.svg">
     <link rel="stylesheet" href="https://unpkg.com/chota@latest">
     <script>
+    const pageUrl = window.location.href;
+    const pageName = "面积计算器";
+    // 获取历史记录数组
+    let historyList = localStorage.getItem('historyList') ? JSON.parse(localStorage.getItem('historyList')) : [];
+    let historyName = localStorage.getItem('historyName') ? JSON.parse(localStorage.getItem('historyName')) : [];
+    // 将当前页面URL添加到历史记录数组中
+    if (!Array.isArray(historyName)) {
+        historyName = []; // 如果是其他类型，将其值设置为一个空数组
+    }
+    historyList.push(pageUrl);
+    historyName.push(pageName);
+    // 将历史记录数组保存到localStorage中
+    localStorage.setItem('historyList', JSON.stringify(historyList));
+    localStorage.setItem('historyName', JSON.stringify(historyName));
         function calculateArea() {
             var shape = document.querySelector('input[name="shape"]:checked').value;
             var inputUnit = document.querySelector('select[name="inputUnit"]').value;
@@ -76,11 +90,16 @@
             document.getElementById("result").innerHTML = "面积为: " + area + " " + unit;
         }
     </script>
+    <script src="vars.js"></script>
 </head>
 
 <body>
-    <div class="nav">
-        <a href="../index.html" class="brand">
+    <nav class="nav">
+        <div class="nav-left">
+            <a href="../index.html" class="active">首页</a>
+            <a href="#">文章</a>
+        </div>
+        <a href="../index.html" class="brand nav-center">
             <svg t="1682152376402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 p-id="24672" width="60" height="60">
                 <path
@@ -88,9 +107,12 @@
                     fill="#8a8a8a" p-id="24673"></path>
             </svg>
         </a>
-        <a href="../index.html" class="active">首页</a>
-        <a href="#">文章</a>
-    </div>
+        <div class="nav-right">
+            <a>推荐</a>
+            <a href="../history/index.html">最近使用</a>
+        </div>
+
+        </div>
     </nav>
     <hr>
     <h1 class="is-center">面积计算器</h1>
@@ -146,6 +168,9 @@
 
         </div>
     </div>
+    <script>
+        localStorage.setItem("AREA", "AREA");
+    </script>
 </body>
 
 </html>

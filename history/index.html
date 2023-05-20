@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FCX工具站 | 最近使用</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+
+</head>
+
+<body>
+    <h1>最近使用</h1>
+    <div class="row is-center">
+        <div id="history-list" class="col-6 text-center card">
+            <button class="button primary col-5" onclick="clearHistory()">清空历史记录</button><br>
+        </div>
+        
+    </div>
+    <script>
+    function clearHistory(){
+            localStorage.removeItem('historyList');
+        };
+        // 从localStorage中获取历史记录数据
+        const historyList = JSON.parse(localStorage.getItem('historyList'));
+        const historyName = JSON.parse(localStorage.getItem('historyName'));
+        // 将历史记录列表渲染到页面中
+        const historyEl = document.getElementById('history-list'); // 获取页面元素
+        for (let i = 0; i < historyList.length; i++) {
+            const item = historyList[i];
+            const name = historyName[i];
+            // 创建列表项
+            const listItem = document.createElement('a');
+
+            // 设置列表项内容
+            listItem.textContent = name;
+            listItem.href = item;
+            const enter = document.createElement('br');
+            historyEl.appendChild(enter);
+            // 将列表项添加到页面中
+            historyEl.appendChild(listItem);
+
+        }
+
+    </script>
+</body>
+
+</html>

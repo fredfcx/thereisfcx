@@ -27,13 +27,13 @@
             margin-top: 50px;
         }
     </style>
-    </head>
+</head>
 
 <body>
 
-<p>
-    <a class="button outline" href="../index.html">&lt;&nbsp;返回</a>
-</p>
+    <p>
+        <a class="button outline" href="../index.html">&lt;&nbsp;返回</a>
+    </p>
     <fieldset>
         <legend>电阻单位换算</legend>
         <div class="card"><input class="input" type="number" id="ohm" aria-labelledby="Ω">欧姆(Ω)</div>
@@ -44,6 +44,20 @@
     </fieldset>
 </body>
 <script>
+    const pageUrl = window.location.href;
+    const pageName = "电阻单位换算";
+    // 获取历史记录数组
+    let historyList = localStorage.getItem('historyList') ? JSON.parse(localStorage.getItem('historyList')) : [];
+    let historyName = localStorage.getItem('historyName') ? JSON.parse(localStorage.getItem('historyName')) : [];
+    // 将当前页面URL添加到历史记录数组中
+    if (!Array.isArray(historyName)) {
+        historyName = []; // 如果是其他类型，将其值设置为一个空数组
+    }
+    historyList.push(pageUrl);
+    historyName.push(pageName);
+    // 将历史记录数组保存到localStorage中
+    localStorage.setItem('historyList', JSON.stringify(historyList));
+    localStorage.setItem('historyName', JSON.stringify(historyName));
     var obj = document.querySelectorAll('.input');
 
     function base(x) {
@@ -116,4 +130,5 @@
 <footer>
     <p>&copy;2023 <a href="../../index.html">FCX工具站</a></p>
 </footer>
+
 </html>
